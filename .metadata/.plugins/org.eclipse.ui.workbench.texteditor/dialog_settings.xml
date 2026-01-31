@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="hasShownOverlayPopupBefore" value="true"/>
+	<section name="java.lang.Class">
+		<item key="replaceBarOpen" value="false"/>
+		<list key="findhistory">
+			<item value="primaryStage.setTitle(&quot;Music Player&quot;);"/>
+			<item value="primary"/>
+			<item value=" "/>
+			<item value="searchBar"/>
+			<item value="search"/>
+			<item value="setupAudioVisualizer()"/>
+			<item value="!isChanging &amp;&amp; mediaPlayer != null"/>
+			<item value="playPauseBtn"/>
+			<item value="searchField.set"/>
+			<item value="searchField"/>
+			<item value=".css"/>
+			<item value="style."/>
+			<item value="style"/>
+			<item value="Video.addRating"/>
+		</list>
+	</section>
+</section>

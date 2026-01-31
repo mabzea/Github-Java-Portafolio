@@ -1,0 +1,44 @@
+public class app {
+    // Adding 'static' allows these to be accessed without an instance of 'app'
+    enum Difficulty {
+        EASY, MEDIUM, HARD
+    }
+
+    // Changed to static
+    static abstract class Monster {
+        String name;
+        public Monster(String name) { this.name = name; }
+        public abstract void performAttack();
+        public abstract void onDeath();
+    }
+
+    // Changed to static
+    static class Dragon extends Monster {
+        public Dragon(String name) { super(name); }
+
+        @Override
+        public void performAttack() {
+            System.out.println(name + " breathes fire!");
+        }
+
+        @Override
+        public void onDeath() {
+            System.out.println(name + " dies.");
+        }
+
+        static class SpecialAbility {
+            String powerName = "Inferno";
+            void activate() { System.out.println("Activating: " + powerName); }
+        }
+    }
+
+    public static void main(String[] args) {
+        Difficulty gameLevel = Difficulty.HARD;
+        // This will now work perfectly
+        Dragon fireDrake = new Dragon("Smaug"); 
+        fireDrake.performAttack();
+        
+        Dragon.SpecialAbility ability = new Dragon.SpecialAbility();
+        ability.activate();
+    }
+}

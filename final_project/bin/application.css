@@ -1,0 +1,126 @@
+/* --- Global Styles & Font --- */
+.root {
+    -fx-background-color: #EDEDED;
+    -fx-font-family: "Verdana", "Arial", sans-serif;
+}
+
+/* --- Player Section (Left) --- */
+
+
+.song-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333; /* Darker for better contrast */
+}
+
+.artist-name {
+    -fx-font-size: 14px;
+    -fx-text-fill: #888888; /* Softer grey */
+}
+
+/* --- Slider --- */
+.time-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #888888; /* Softer grey */
+    -fx-min-width: 40px; /* Give them a fixed width to prevent layout shifts */
+    -fx-alignment: center;
+}
+
+.slider .track {
+    -fx-background-color: #E0E0E0; /* Lighter track color */
+    -fx-background-radius: 5px;
+    -fx-pref-height: 6px;
+}
+
+.slider .thumb {
+    -fx-background-color: #333333; /* Darker thumb for contrast */
+    -fx-padding: 7px;
+    -fx-background-radius: 50%;
+ 
+    
+}
+
+.slider:hover .thumb {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 5);
+}
+
+/* Custom styling to show progress fill with a new accent color */
+.slider .colored-track {
+    -fx-background-color: #007AFF; /* Modern blue accent */
+    -fx-background-radius: 5px;
+}
+
+/* --- Control Buttons --- */
+.icon-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 50%;
+    -fx-padding: 8px;
+    /* Added a smooth transition for the shadow */
+   
+}
+
+/* All icon buttons will now get a shadow on hover */
+.icon-button:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 10, 0, 0, 5);
+}
+
+/* Special styling for the main play button */
+
+#play-pause-btn:hover {
+     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 15, 0, 0, 5);
+}
+
+
+/* --- Right Panel (Queue/Search) --- */
+#right-panel {
+    -fx-background-color: #F5F5F7; /* A very light, clean grey */
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.2), 60, 0, 5, 0)
+}
+
+.header-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #555555; /* Softer, warm grey */
+}
+
+/* --- Search Bar --- */
+.text-field:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 15, 0, 0, 3);
+    
+    }
+.text-field {    
+    -fx-background-color: #E3E3E3; /* Cleaner background */
+    -fx-text-fill: #333333;
+    -fx-prompt-text-fill: #AAAAAA;
+    -fx-background-radius: 50px; /* Pill shape */
+    -fx-border-width: 0;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 15, 0, 0, 2); /* A slightly more subtle shadow */
+}
+
+
+
+/* --- List View (Queue) --- */
+.list-view {
+    -fx-background-color: transparent;
+}
+
+.list-view .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #555555;
+    -fx-padding: 10px;
+    -fx-font-size: 14px;
+}
+
+.list-view .list-cell:filled:hover {
+    -fx-background-color: #EAEAEB; /* Light hover effect */
+    -fx-text-fill: #333333;
+    -fx-background-radius: 5px;
+}
+
+.list-view .list-cell:filled:selected {
+    -fx-background-color: #DDDDDF; /* Slightly darker selection */
+    -fx-text-fill: black;
+    -fx-background-radius: 5px;
+}
