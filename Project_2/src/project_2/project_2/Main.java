@@ -5,6 +5,8 @@ import org.apache.logging.log4j.Logger;
 
 public class Main {
     
+	
+	
     // Initialize the Logger
     private static final Logger logger = LogManager.getLogger(Main.class);
 
@@ -20,5 +22,17 @@ public class Main {
         } finally {
             logger.info("Application finishing execution.");
         }
+        
+        
+        
+            try {
+                System.out.println("Hello World!");
+            } catch (Exception e) {
+                System.out.println("Something went wrong.");
+            } finally {
+                System.out.println("Done.");
+            }
     }
+    
+    
 }
