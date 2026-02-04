@@ -23,15 +23,8 @@ public class Main {
             logger.info("Application finishing execution.");
         }
         
+                
         
-        
-            try {
-                System.out.println("Hello World!");
-            } catch (Exception e) {
-                System.out.println("Something went wrong.");
-            } finally {
-                System.out.println("Done.");
-            }
     }
     
     
