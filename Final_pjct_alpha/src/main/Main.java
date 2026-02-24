@@ -7,8 +7,8 @@ public class Main {
         GameLog logger = GameLog.getInstance();
         logger.addEntry("Game started.");
 
-        // Test the Interface and Inheritance
-        Interactable myLight = new Flashlight();
+        Flashlight myLight = new Flashlight();
+       
         System.out.println("Item: " + myLight.getName());
         myLight.use(); 
         
