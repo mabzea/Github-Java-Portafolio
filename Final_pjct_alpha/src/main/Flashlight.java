@@ -1,16 +1,24 @@
 package main;
 
 public class Flashlight extends Item {
-    private int batteryLevel = 100;
+    private int batteryLevel;
 
     public Flashlight() {
-        // Changed the second parameter to a double (weight) to match Item.java
-        super("Flashlight", 2.5); 
+        super("Flashlight", 2.5);
+        // READ from the database when the item is created
+        this.batteryLevel = DatabaseManager.getBatteryLevel();
     }
 
-    // Removed @Override because Item.java doesn't have a use() method right now
-    public void use() { 
-        System.out.println("The beam flickers to life, cutting through the shadows.");
-        batteryLevel -= 10;
+
+    public void use() {
+        if (batteryLevel > 0) {
+            System.out.println("The beam flickers to life. (Battery: " + batteryLevel + "%)");
+            batteryLevel -= 10;
+            
+            // UPDATE the database so the battery drain is saved
+            DatabaseManager.updateBatteryLevel(batteryLevel);
+        } else {
+            System.out.println("You click the switch, but the flashlight is dead.");
+        }
     }
 }

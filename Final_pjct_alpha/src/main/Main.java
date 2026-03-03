@@ -1,18 +1,14 @@
 package main;
 
 public class Main {
-	
-	public static void main(String[] args) {
-        // Test the Singleton
-        GameLog logger = GameLog.getInstance();
-        logger.addEntry("Game started.");
+    public static void main(String[] args) {
+        // 1. Initialize DB first
+        DatabaseManager.initializeDatabase();
 
-        Flashlight myLight = new Flashlight();
-       
-        System.out.println("Item: " + myLight.getName());
-        myLight.use(); 
+        // 2. Test the item
+Flashlight myLight = new Flashlight();
         
-        logger.addEntry("Player used flashlight.");
+        // Line 12 will now work perfectly:
+        myLight.use();
     }
-
 }
