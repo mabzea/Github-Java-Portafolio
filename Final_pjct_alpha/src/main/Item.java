@@ -5,8 +5,6 @@ package main;
  * Implements Comparable to provide a default alphabetical sorting order by name.
  * * NOTE ON COMPARABLE VS COMPARATOR:
  * - Comparable is implemented IN the class itself. It defines the "natural" or default sorting order (e.g., alphabetical by name).
- * - It requires overriding the compareTo() method.
- * - You can only have ONE Comparable implementation per class.
  * * @author Angel Barajas
  * @version 1.0
  */
