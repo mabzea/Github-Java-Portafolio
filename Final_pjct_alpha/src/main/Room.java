@@ -20,12 +20,12 @@ public class Room {
         this.exits = new HashMap<>();
     }
 
-    // 2. Updated parameter to require a Direction enum instead of a String
+    // 2.parameter to require a Direction enum instead of a String
     public void setExit(Direction direction, Room neighbor) {
         exits.put(direction, neighbor); // No more .toLowerCase() needed!
     }
 
-    // 3. Updated parameter to require a Direction enum
+    // 3. parameter to require a Direction enum
     public Room getExit(Direction direction) {
         return exits.get(direction);
     }
@@ -52,7 +52,7 @@ public class Room {
         }
         System.out.print("\nExits: ");
         
-        // 4. Updated the loop to iterate over Direction objects instead of Strings
+        // 4. loop to iterate over Direction objects instead of Strings
         for (Direction direction : exits.keySet()) {
             System.out.print("[" + direction + "] ");
         }

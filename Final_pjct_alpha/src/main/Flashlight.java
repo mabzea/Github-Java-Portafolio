@@ -15,7 +15,7 @@ public class Flashlight extends Item {
             System.out.println("The beam flickers to life. (Battery: " + batteryLevel + "%)");
             batteryLevel -= 10;
             
-            // UPDATE the database so the battery drain is saved
+            
             DatabaseManager.updateBatteryLevel(batteryLevel);
         } else {
             System.out.println("You click the switch, but the flashlight is dead.");
