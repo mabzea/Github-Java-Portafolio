@@ -45,4 +45,9 @@ public class Item implements Comparable<Item> {
     public String toString() {
         return name + " (" + weight + " lbs)";
     }
+
+	public void use() {
+		// TODO Auto-generated method stub
+		
+	}
 }

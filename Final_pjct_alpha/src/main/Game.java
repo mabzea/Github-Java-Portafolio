@@ -3,6 +3,9 @@ package main;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.time.LocalTime;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 /**
  * The main engine for the Blackridge Penitentiary escape game.
@@ -55,6 +58,8 @@ public class Game {
         System.out.println("          ESCAPE FROM BLACKRIDGE PENITENTIARY            ");
         System.out.println("=========================================================");
         System.out.println("Commands: 'go [direction]', 'take', 'use [item]', 'inventory', 'quit'");
+        
+        printAtmosphericGreeting();
 
         currentRoom.printLocationInfo();
 
@@ -79,9 +84,14 @@ public class Game {
             else if (input.equals("inventory")) {
                 showInventory();
             }
+            else if (input.equals("save")) {
+                // Pass the scanner and the logger data to our new manager
+                SaveManager.runSaveAndNIO(scanner, logger.toString());
+            }
             else {
                 System.out.println("I don't understand that command.");
             }
+            
         }
         scanner.close();
     }
@@ -167,5 +177,29 @@ public class Game {
     public static void main(String[] args) {
         Game game = new Game();
         game.play();
+    }
+    
+    private void printAtmosphericGreeting() {
+        // 1. Get the current time
+        LocalTime now = LocalTime.now();
+        int hour = now.getHour();
+        String timeKey;
+
+        // 2. Determine the time of day
+        if (hour >= 6 && hour < 12) {
+            timeKey = "morning";
+        } else if (hour >= 12 && hour < 17) {
+            timeKey = "afternoon";
+        } else if (hour >= 17 && hour < 21) {
+            timeKey = "evening";
+        } else {
+            timeKey = "night";
+        }
+
+        // 3. Load the Resource Bundle (You can change Locale.ENGLISH to Locale.of("es") to test Spanish!)
+        ResourceBundle messages = ResourceBundle.getBundle("main.Messages", Locale.ENGLISH);
+        
+        // 4. Print the localized atmospheric message
+        System.out.println("\n*** " + messages.getString(timeKey) + " ***");
     }
 }
